@@ -1,0 +1,52 @@
+<!-- step 5: create this file -->
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- step 15: add this line -->
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<!-- step 12: add the table -->
+<!-- note the class is called 'content' -->
+<div class="content">
+    <h1 style="text-align: center">Task Master</h1>
+    <!-- step 26: add if statement -->
+    <!-- it means there is no entry -->
+    <!-- remember the endif -->
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">There is no task. Create one below.</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        <!-- step 17: add the action -->
+        <!-- run python app.py to check -->
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.content }}</td>
+            <td>{{ task.date_created.date() }}</td>
+            <td>
+                <!-- step 20: add the links -->
+                <!-- run python app.py to check -->
+                <a href="/delete/{{ task.id }}">Delete</a>
+                <br>
+                <!-- step 22: add the links -->
+                <a href="/update/{{ task.id }}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <!-- step 14: add the form -->
+    <div class="form">
+        <form action="/" method="POST"> 
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+</div>
+{% endblock %}

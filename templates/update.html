@@ -1,0 +1,19 @@
+<!-- step 23: create this file by copying from index.html -->
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Task</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Update Task</h1>
+    <div class="form">
+        <form action="/update/{{ task.id }}" method="POST"> 
+            <!-- step 25: add value -->
+            <input type="text" name="content" id="content" value="{{ task.content }}">
+            <input type="submit" value="Update Task">
+        </form>
+    </div>
+</div>
+{% endblock %}
