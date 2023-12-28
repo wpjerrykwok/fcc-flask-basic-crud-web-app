@@ -1,6 +1,6 @@
 \# Notes for implementation and deployment
 
-Tutorial: (Learn Flask for Python - Full Tutorial) [https://youtu.be/Z1RJmh_OqeA] from freeCodeCamp.org https://www.youtube.com/@freecodecamp
+Tutorial: Learn Flask for Python - Full Tutorial [YouTube](https://youtu.be/Z1RJmh_OqeA) from [freeCodeCamp.org](https://www.youtube.com/@freecodecamp)
 
 ## pre-requisites
 * git : https://git-scm.com/downloads
